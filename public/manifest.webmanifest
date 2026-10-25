@@ -1,14 +1,14 @@
 {
   "name": "Kamin",
   "short_name": "Kamin",
-  "description": "Живой перевод с норвежского на русский",
+  "description": "Live Norwegian speech translation",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#f3f5f4",
   "theme_color": "#f3f5f4",
-  "lang": "ru",
+  "lang": "en",
   "icons": [
     {
       "src": "/icons/icon-192.png",

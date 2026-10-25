@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "kamin",
+  "account_id": "0d452d864ca91bf270bc390490650534",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-10",
   "assets": {

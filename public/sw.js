@@ -1,4 +1,4 @@
-const CACHE = "kamin-v15";
+const CACHE = "kamin-v20";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
@@ -20,7 +20,13 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin || url.pathname === "/session") return;
+  if (
+    url.origin !== self.location.origin ||
+    url.pathname === "/session" ||
+    url.pathname === "/translate"
+  ) {
+    return;
+  }
 
   event.respondWith(fromNetwork(request));
 });
@@ -39,6 +45,6 @@ async function fromNetwork(request) {
   } catch {
     const cached = await caches.match(request);
     if (cached) return cached;
-    return new Response("Нет сети", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+    return new Response("Offline", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
   }
 }

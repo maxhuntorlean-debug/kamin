@@ -204,6 +204,47 @@ h2 { font-size: 16px; }
 
 .now { gap: 10px; }
 
+.now-split {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.now-pane {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.now-title-split {
+  display: none;
+  margin: 0;
+  color: #66707a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.now-pane-ru {
+  display: none;
+  border-top: 1px solid #eef1ef;
+  padding-top: 10px;
+}
+
+.app.mode-text .now-title-single { display: none; }
+
+.app.mode-text .now-title-split { display: block; }
+
+.app.mode-text .now-pane-ru { display: flex; }
+
+.app.mode-text .current {
+  font-size: clamp(1.25rem, 4.2vw, 1.9rem);
+}
+
 .current {
   flex: 1;
   min-height: 0;
@@ -222,6 +263,10 @@ h2 { font-size: 16px; }
   color: #66707a;
   font-size: clamp(1.15rem, 3.6vw, 1.45rem);
   font-weight: 500;
+}
+
+.current-ru {
+  color: #0f766e;
 }
 
 .card-head {
@@ -256,6 +301,22 @@ h2 { font-size: 16px; }
   margin: 0;
   font-size: clamp(1.05rem, 3.3vw, 1.3rem);
   line-height: 1.35;
+}
+
+.history .entry .source {
+  color: #1c2430;
+}
+
+.history .entry .translation {
+  margin-top: 4px;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.history .entry .translation.pending {
+  color: #66707a;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .dock {
@@ -310,6 +371,14 @@ h2 { font-size: 16px; }
   gap: 8px;
 }
 
+.mode-switch.wrap {
+  flex-wrap: wrap;
+}
+
+.mode-switch.wrap .choice {
+  flex: 1 1 calc(50% - 4px);
+}
+
 .choice {
   flex: 1;
   min-height: 44px;
@@ -360,6 +429,51 @@ h2 { font-size: 16px; }
   justify-content: center;
   padding: 14px;
   background: rgba(28, 36, 48, 0.28);
+}
+
+.confirm {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: rgba(28, 36, 48, 0.4);
+}
+
+.confirm-card {
+  width: min(100%, 340px);
+  background: #fff;
+  border: 1px solid #e6ebe8;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(16, 24, 20, 0.16);
+}
+
+.confirm-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.confirm-text {
+  margin: 0 0 16px;
+  color: #66707a;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.choice.danger {
+  color: #9f1239;
+  border-color: #f5c2d0;
+  background: #fff5f7;
+}
+
+.choice.danger[aria-pressed="true"],
+.choice.danger:active {
+  background: #9f1239;
+  border-color: #9f1239;
+  color: #fff;
 }
 
 .settings-card {
